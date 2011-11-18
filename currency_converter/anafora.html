@@ -5,7 +5,7 @@
 		<title>Anafora</title>
 	
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-		<meta name="description" content="Anafora ergasiwn 2 kai 3" />
+		<meta name="description" content="Anafora ergasiwn 3 kai 4" />
 		<meta name="keywords" content="anafora" />		
 		<meta name="author" content="Chris Aivatis" />    
 		
@@ -13,15 +13,63 @@
 	</head>
 
 	<body>
+		WWW - Εργασία Currency Converter - Αναφορά
 		<div id="container">
 		
-			<div id="kefalida"><h1>Anafora</h1></div>
+			<div id="keimeno"><h1>ΑΝΑΦΟΡΑ</h1>
 		
-			<div id="keimeno">
-				<p>Syntoma konta sas...</p>
-				<p>Diathesimh prin to Savvato 19/11/2011</p>
-				<p>Ypomonh...</p>
-				<p>Read me soon...</p>
+			
+				Αϊβάτης Χρήστος 
+<br/>Α.Ε.Μ. = 589 
+<br/>hraivati@inf.uth.gr
+
+<br/>github --> <a href="https://github.com/hraivati/Currency-Converter/tree/master/currency_converter" target="_blank">
+					https://github.com/hraivati/Currency-Converter/tree/master/currency_converter</a>
+
+<br/>ΕΡΓΑΣΙΕΣ 3, 4 = Currency Converter
+
+<p>Είχαμε μείνει στην Εργασία no.3, όπου υλοποίησα τον currecny converter χρησιμοποιώντας
+servlets.</p>
+<p>Για την Εργασία no.4 χρειάστηκε πρώτα απ' όλα να τροποποιήσω το servlet μου (CurConv)
+ώστε να παίρνει δυναμικά τις ισοτιμίες. Αξιοποίησα τον Google τρόπο που παρουσιάστηκε στο texwww.wordpress.com
+Βοήθεια πάνω στη δυσκολία για το πώς να κάνω την GET αίτηση (την έκανα για amount = 1) στον calculator της Google 
+και πώς να κάνω parse την απάντηση ώστε να εξάγω το επιθυμητό αποτέλεσμα (κλασικές μέθοδοι της Java) πήρα από:  
+--> http://pastebin.com/D0kj0kS6 (μου το πρότεινε συμφοιτήτρια), 
+--> http://www.exampledepot.com/egs/java.net/Post.html?l=rel</p>
+
+<p>Στη συνέχεια έπρεπε να προσθέσω μία form για το CODE κουμπί στο index.html αρχείο μου 
+και να δημιουργήσω ένα νέο servlet (CodeRet) για να μπορεί ο χρήστης να κατεβάζει τον κώδικα της εργασίας.
+Ακολούθησα το αντίστοιχο παράδειγμα του βιβλίου, απλώς άλλαξα το content type σε "application/zip".
+Αυτό στάθηκε αφορμή να ψάξω λίγο γενικά τους διάφορους τύπους.</p>
+
+<p>Επόμενο κουμπί το ANAFORA (greeklish...), οπότε έφτιαξα την αντίστοιχη form 
+και έγραψα τρία νέα .java αρχεία. 
+
+<ul>
+<li>Το ένα έγινε το servlet (ReadAnafora.java --> Anafora), το οποίο καλείται από
+την form και που δουλειά του είναι να παίρνει από το ServletContext το LinkAnaforas αντικείμενο που υπάρχει 
+εκεί ως attribute καθώς και να λέει στον browser να καλέσει 
+τη νέα σελίδα (response.sendRedirect(url) μέθοδος) με url = την instance variable (String) του παραπάνω αντικειμένου.</li>
+
+<li>Το άλλο έγινε η LinkAnaforas κλάση μου με instance variable το String linkAnaforas.</li>
+
+<li>Τέλος, το τρίτο έγινε ο listener που ακούει-διαβάζει την τιμή της context init parameter link_anaforas 
+(την τιμή της, καθώς και το όνομα του listener καθόρισα στο web.xml αρχείο), δημιουργεί με βάση την τιμή αυτή
+ένα νέο αντικείμενο LinkAnaforas και με τη μέθοδο setAttribute(String, Object) του ServletContext 
+τοποθετεί το παραπάνω αντικείμενο στο context ως attribute.</li>
+</ul>
+
+Και εδώ ακολούθησα το αντίστοιχο παράδειγμα του βιβλίου. 
+Βέβαια, το αποτέλεσμα στα μάτια του χρήστη
+είναι πολύ απλό --> απλώς πατώντας το κουμπί ANAFORA πηγαίνει στη σελίδα όπου βρίσκεται η αναφορά μου!</p>
+
+<p>Τελικά, άλλαξα την εικόνα-backround στο .css αρχείο μου (φοβήθηκα μήπως επηρρεάσει αισθητά την ταχύτητα?!?)</p>
+
+<p>Όσον αφορά τη λειτουργικότητα, επέλεξα 4 ισοτιμίες αντί για όλες τις πιθανές, ενώ με μία try.. catch δομή 
+χειρίστηκα την περίπτωση που κάποιος δίνει σαν amount το κενό ή γενικά όχι αριθμό της μορφής ΧΧΧΧ.ΧΧΧΧ
+Δυστυχώς δεν πρόλαβα να το κάνω να επιστρέφει το αποτέλεσμα στην ίδια σελίδα.
+Θα προσπαθήσω μετά το τέλος της προθεσμίας..</p>
+
 			</div>
 
 		</div>

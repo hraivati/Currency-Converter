@@ -1,5 +1,36 @@
-﻿body
-{
-font-size:100%;
-font-family:"Comic Sans MS", cursive, sans-serif;
-}   
+﻿body {
+	background: black;
+	color: white;                        
+	font-family: Century, "Comic Sans MS", "Times New Roman";
+	font-variant: small-caps;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 15px 10px;
+}
+
+#container{
+	margin: 50px 130px;
+	width: 700px;
+	text-align: left;
+}
+
+#keimeno{
+	background: white;
+	height: 1000px;
+	margin: 10px 0px 10px 0px;
+	border: 5px ridge #C8C8C8;
+	padding: 5px 10px 5px 10px;
+	color: black;
+	font-family: "Comic Sans MS", "Times New Roman", Century;  
+	font-variant: normal;
+	font-size: 15px;
+	font-weight: normal;
+	text-align: justify;
+}
+
+ul{
+	list-style-type: circle;
+}
+
+
+
