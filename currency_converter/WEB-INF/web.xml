@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">  
+
+
+  <servlet>
+    <servlet-name>CurConv</servlet-name>
+    <servlet-class>CurrencyConverter</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>CodeRet</servlet-name>
+    <servlet-class>CodeReturn</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>Anafora</servlet-name>
+    <servlet-class>ReadAnafora</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+    <servlet-name>CurConv</servlet-name>
+    <url-pattern>/myCurrencyConverter</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>CodeRet</servlet-name>
+    <url-pattern>/myCode.zip</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>Anafora</servlet-name>
+    <url-pattern>/myAnafora</url-pattern>
+  </servlet-mapping>
+  
+
+  <listener>
+	<listener-class>MyServletContextListener</listener-class>
+  </listener>
+  
+  
+  <context-param>
+	<param-name>link_anaforas</param-name>
+	<param-value>http://texwww.inf.uth.gr:8080/~hraivati/anafora.html</param-value>
+  </context-param>
+  
+</web-app>
+
